@@ -6,7 +6,7 @@
 #In main dir run rackup, 
 #go to rassets dir and run rails s
 
-#Thats because in sinatra sprockets not working good with tempates hamlcoffee
+#Thats because in sinatra sprockets not working good with templates hamlcoffee
 
 #server name: catordog.com
 #config nginx is in dir config/nginx-vhost.conf 
