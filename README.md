@@ -1,9 +1,9 @@
-application use nginx server.
-to restart app in gentoo use:
+#application use nginx server.
+#to restart app in gentoo use:
 
-/etc/init.d/nginx start
+#/etc/init.d/nginx start
 
-In main dir run rackup
-Go to rassets dir and run rails s
+#In main dir run rackup, 
+#go to rassets dir and run rails s
 
-Thats because in sinatra sprockets not working good with tempates hamlcoffee
+#Thats because in sinatra sprockets not working good with tempates hamlcoffee
