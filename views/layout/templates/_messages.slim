@@ -1,0 +1,32 @@
+script id="messages-index-template" type='text/x-jquery-tmpl'
+  h1 'hey
+  form action="/messages/#{@type}" method='post'
+    table.table.table-striped
+      /- if @type == 'sent'
+      '{{if type == 'sent'}}
+        th To: 
+      '{{/fi}}
+      
+      - if @type == 'inbox'
+        th From: 
+      /th Message:
+      /th Time:
+      '{{each messages}}
+      tr
+        /- if @type == 'sent'
+          /td = message.to_user.username
+        /-  if @type == 'inbox'
+        td ${from_user.username}
+        td
+          '${body}
+        /td =time_ago_in_words(message.created_at)+ ' ago'
+        td
+          
+          /input type='hidden' name='message_id' value=message.id
+          input type='hidden' name='message_id'
+
+
+
+          a.btn.show-msg data-message-id='${message.id}' Show
+          input.btn.btn-danger type='submit' name='delete' value='delete'
+      '{{/each}}

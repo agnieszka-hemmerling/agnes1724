@@ -1,0 +1,21 @@
+#register-st
+  %h2.header-st Sign Up
+  %form.form-horizontal(action='')
+    %fieldset
+      .control-group
+        %label.control-label Username
+        .controls
+          %input#username.inp-st(type='text')
+      .control-group
+        %label.control-label Email
+        .controls
+          %input#mail.inp-st(type='text')
+      .control-group
+        %label.control-label Password
+        .controls
+          %input#password.inp-st(type='password')
+      .control-group
+        %label.control-label Confirm Password
+        .controls
+          %input#confirmation.inp-st(type='password' )
+      %input.btn.btn-st(type='submit' value='Sign up')

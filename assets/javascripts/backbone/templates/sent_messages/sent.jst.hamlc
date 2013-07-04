@@ -1,0 +1,9 @@
+.well.span6
+  .content
+    %h1 Sent 
+    %br
+      %table.table.table-striped
+        %th To: 
+        %th Message:
+        %th Time
+        %th

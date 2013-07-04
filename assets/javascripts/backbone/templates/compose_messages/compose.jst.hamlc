@@ -1,0 +1,12 @@
+.well.span6
+  %h1 Compose mail
+  %br
+  #avatar_image
+  %form#compose(method="post" autocomplete='off')
+    %label To:
+    %input#to_user(type='text' name='to_user')
+    %label Text:
+    %textarea#textarea(name="body" placeholder="Enter text ..." style="width: 450px; height: 130px")
+    %br
+    %input.btn.btn-primary.btn-large.pull-right(type="submit" value="Compose")
+

@@ -1,0 +1,13 @@
+.large
+  - if @photo.prev_id
+    %a.prev_id(href="#/photos/upload/#{@photo.prev_id}")
+      %img(src="/images/rnd_br_prev.png")
+
+  %a.large-close(href='#/photos/upload') CLOSE X
+  .photos-box
+    %img.large-photo(src="#{@photo.url}")
+    %img.next-photo(src="")
+
+  - if @photo.next_id
+    %a.next_id(href="#/photos/upload/#{@photo.next_id}")
+      %img(src="/images/rnd_br_next.png")

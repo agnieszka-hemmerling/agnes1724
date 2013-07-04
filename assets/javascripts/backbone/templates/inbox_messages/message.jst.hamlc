@@ -1,0 +1,11 @@
+%td
+  %strong 
+    = @from_user.username
+%td
+%td.td-color
+  %a(href="/#messages/inbox/#{@id}")= @body
+%td
+  = @created_at_ago
+%td
+  %img.icon-img-js(src='/images/delete-icon.png')
+

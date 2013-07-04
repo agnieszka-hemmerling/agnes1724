@@ -1,0 +1,5 @@
+#top
+  %i.icon-remove.icon-white(width='10px')
+
+#show-message
+  %p heloo

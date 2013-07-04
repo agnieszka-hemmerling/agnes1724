@@ -1,0 +1,18 @@
+#photo-box
+
+#thumb-box
+  %a.prev(href="#")
+  %a.next(href="#")
+
+#close-box  
+  %a(href="#") CLOSE X
+#info
+  = @current_user.username
+  = @current_user.email
+  = @current_user.pet_city
+  = @current_user.pet_informatio
+#start-box
+#end-box
+
+
+

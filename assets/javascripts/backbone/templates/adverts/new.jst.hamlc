@@ -1,0 +1,45 @@
+#new_classified
+  %h1 Advertise Your Pet
+
+  .row10
+    %h2 Your Pet's Details
+    %form.form-horizontal(action='/#adverts')
+      .control-group
+        %label.control-label(for='animal') Species
+        .controls
+          %input#animal(type='text') 
+
+      .control-group
+        %label.control-label(for='animal') Breed
+        .controls
+          %input#breed(type='text') 
+
+      .control-group
+        %label.control-label City
+        .controls
+          %input#city(type='text')
+
+      .control-group
+        %label.control-label Postcode
+        .controls
+          %input#postcode(type='text')
+
+      .control-group
+        %label.control-label Price
+        .controls
+          %input#price(type='text')
+
+      .control-group
+        %label.control-label(for='body') Descripton
+        .controls
+          %textarea#body(type='text' placeholder="Enter text ..." rows='3')
+
+  .row10
+    %h2 Your Pet's Photos
+
+    .gallery.span5
+      %input(type='file' value='add picture')
+      .js-gallery
+        add pictures
+
+        %input.btn.btn-primary.btn-success.btn-large(type='submit' value='Advertise')

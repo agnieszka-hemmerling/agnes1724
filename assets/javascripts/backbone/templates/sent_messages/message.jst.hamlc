@@ -1,0 +1,11 @@
+%td 
+  %strong
+    = @sent.to_user.username
+%td.td-color
+  %a(href="/#messages/sent/#{@sent.id}")
+    = @sent.body
+%td
+  = @sent.created_at_ago
+%td
+  %img.icon-img-js(src='/images/delete-icon.png')
+

@@ -1,0 +1,10 @@
+#navurl
+  
+  %div.tabbable
+    %ul.nav.nav-tabs
+      %li
+        %a(href='/#settings/email') Email
+      %li
+        %a(href='/#settings/password') Password
+#inurl
+ 

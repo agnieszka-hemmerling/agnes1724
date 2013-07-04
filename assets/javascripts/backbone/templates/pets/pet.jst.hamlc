@@ -1,0 +1,6 @@
+%form
+  %input(value=@pet.name)=@pet.name
+  %input(value=@pet.animal)=@pet.name
+  %input(value=@pet.breed)=@pet.name
+= @pet.animal
+= @pet.breed

@@ -1,0 +1,7 @@
+.well.span8.gallery
+  #file-uploader
+
+
+  #gallery.my-gallery
+    - for photo in @photos
+      != JST['photo'](photo: photo)

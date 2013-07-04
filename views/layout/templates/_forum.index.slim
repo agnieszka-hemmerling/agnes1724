@@ -1,0 +1,26 @@
+script id='forum-index' type='text/x-jquery-tmpl'
+  table.table.table-striped
+    th 
+      h4 Topic 
+    th
+      h4 style="text-align:center" Posts
+
+    th
+      h4 Latest
+
+    '{{each subjects}}
+      
+    
+    tr
+      td 
+        a href="/forum/${name}/messages"
+          h3 ${name}
+          /#.gsub('-',' ')
+      td style="text-align:center"
+        /= subject.forum_messages.count
+        '${forum_messages_count}
+      td
+        /.btn ${forum_messages_count}
+        /= time_ago_in_words(subject.created_at)+ ' ago'
+        '${created_at_ago} ago
+    '{{/each}}

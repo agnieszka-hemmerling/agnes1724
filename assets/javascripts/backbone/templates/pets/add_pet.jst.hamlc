@@ -1,0 +1,12 @@
+%form(action='/#pet/profile')
+  %label Pet name foobar
+  %input#name(type='text') 
+
+  %label Animal Type
+  %input#animal(type='text')
+
+  %label Breed
+  %input#breed(type='text')
+
+  %br
+  %input.btn.btn-primary(type='submit')

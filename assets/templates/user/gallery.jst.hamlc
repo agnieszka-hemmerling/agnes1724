@@ -1,0 +1,5 @@
+%a.close-gallery(href="#") CLOSE X
+#glowna-galeria.user-gallery
+
+  - for photo in @photos
+    != JST['user/photo'](photo: photo)

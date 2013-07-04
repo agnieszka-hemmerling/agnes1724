@@ -1,0 +1,6 @@
+%img.icon(src="/images/delete-icon.png")
+%a(data-filename="#{@photo.filename}" href="#/photos/upload/#{@photo.filename}")
+  %img.male-photo(src="#{@photo.thumb_url}")
+  %p
+    = @photo.created_ago
+    ago

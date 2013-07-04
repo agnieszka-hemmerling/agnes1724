@@ -1,0 +1,3 @@
+.tabbable
+  %ul.nav.nav-tabs
+  .tab-content

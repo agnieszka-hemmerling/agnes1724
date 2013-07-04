@@ -1,0 +1,42 @@
+.well.span6
+
+  - if @message.next_id
+    %a.btn(href="/#messages/inbox/#{@message.next_id}")= "<-"
+  - else
+    %a.btn.disabled= "<-"
+    
+  - if @message.prev_id
+    %a.btn(href="/#messages/inbox/#{@message.prev_id}")= "->"
+  - else
+    %a.btn.disabled= "->"
+
+  #message-show  
+    .date
+      = @message.created_at_strftime
+    %br
+    .from
+      From:
+    #username-reply.from-username
+      = @message.from_user.username
+    %br
+    .to
+      To:
+    .to-username
+      = @message.to_user.username
+    %br
+    .text-message
+      = @message.body
+    %br
+    %hr
+    #replies
+    %form(method="/#messages/inbox")
+      %textarea#text-reply(placeholder="Reply..." 
+                          style="width: 450px; height: 30px")
+      %input.btn(type='submit'value='Reply') 
+    %br
+
+
+
+
+
+

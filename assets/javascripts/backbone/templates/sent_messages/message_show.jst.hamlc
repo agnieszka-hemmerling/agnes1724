@@ -1,0 +1,35 @@
+.well.span6
+  - if @message.next_id
+    %a.btn(href="/#messages/sent/#{@message.next_id}")= "<-"
+  - else
+    %a.btn.disabled= "<-"
+    
+  - if @message.prev_id
+    %a.btn(href="/#messages/sent/#{@message.prev_id}")= "->"
+  - else
+    %a.btn.disabled= "->"
+
+  #message-show  
+    .date
+      = @message.created_at_strftime
+    %br
+    .from
+      From:
+    .from-username
+      = @message.from_user.username
+    %br
+    .to
+      To:
+    .to-username
+      = @message.to_user.username
+    %br
+    .text-message
+      = @message.body
+    %br
+    %hr
+
+
+
+
+
+

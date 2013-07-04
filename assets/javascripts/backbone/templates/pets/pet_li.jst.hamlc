@@ -1,0 +1,3 @@
+%a(href="#/pets/#{@pet.name}" )= @pet.name
+
+

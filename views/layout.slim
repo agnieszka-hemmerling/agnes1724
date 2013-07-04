@@ -1,0 +1,145 @@
+doctype html
+html
+  head
+    meta http-equiv="Content-Type" content="text/html; charset=utf-8"
+    meta name="lang" content="en"
+    title Cat or Dog
+
+
+    script type="text/javascript" src="/javascripts/vendor/jquery.min.js"
+    script type="text/javascript" src="/jquery-ui/js/jquery-ui-1.8.20.custom.min.js"
+    script type="text/javascript" src="/javascripts/vendor/underscore.js"
+    script type="text/javascript" src="/javascripts/vendor/backbone.js"
+    
+    script type="text/javascript" src="/select/select2.js"
+    link href='/select/select2.css' rel="stylesheet"
+
+    == slim :'layout/_bootstrap'
+    link href='/assets/application.css' rel="stylesheet"
+    script src='/assets/application.js'
+
+
+
+    /== slim :'layout/_gallery'
+    == slim :'layout/_modal'
+    == slim :'layout/_bootstrap-transition'
+    == slim :'layout/_bootstrap-tab'
+    == slim  :'layout/_upload'
+    == slim :'layout/_vendor'
+
+    coffee:
+      $ ->
+        $('.dropdown-toggle').dropdown()
+        $(".alert").alert()
+        #$('#myTab').tab('show')
+    
+    sass:
+      body
+        background-color: #E3E9ED 
+
+  
+  body
+    - unless session[:user_id]
+      .navbar
+        .navbar-inner
+          .container style="width: auto;"
+            a.brand href="/" Cat or Dog
+      .span7.offset9
+        #log-st
+
+          h2.header-st Log in
+          form method='post' action='/login'
+            input.inp-log type="text" placeholder="username" name="username"
+            input.inp-log type="password" placeholder="password" name="password"
+            button.btn-log.btn-primary type="submit" value="submit" Sign in 
+
+      .span7.offset9
+        #yield-register
+          == yield
+      sass:
+        body
+          background-color: #E3E9ED 
+          background-image: url("/images/dog_small.png") 
+          background-repeat: no-repeat
+          background-position-x: 13px
+
+    - if session[:user_id]
+      .navbar
+        .navbar-inner
+          .container 
+            a.brand href="/" Cat or Dog
+            ul.nav.pull-left
+              li
+              -if @current_user
+                li
+                  img src="#{@current_user.avatar_url}" width='40' height='40'
+                li 
+                  a href='#'= @current_user.email
+
+            ul.nav.pull-right
+              li.divider-vertical
+              li
+                a href='/logout' Wyloguj
+            ul.nav.pull-right
+              li
+                a href='/settings' Settings
+
+            ul.nav.pull-right
+              #input-search
+      .row12
+        .well.span4
+          ul.nav.nav-list
+            li.nav-header
+              |Main list
+            -if @current_user
+              li 
+                a href='/home'
+                  i.icon-white.icon-home 
+                  | &nbsp;&nbsp;&nbsp;#{@current_user.username}
+            li
+              a href='/adverts' Advetisement
+            li
+              a href='/search' Find friend
+            li
+              a href='/pets' Your Pets
+            li 
+              a href='/photos/upload' Photo 
+            li.nav-header
+              |Your messages
+            li 
+              a href="/messages/inbox" Inbox
+            li
+              a href="/messages/compose" Compose Mail
+            li
+              a href="/messages/sent" Sent Mail
+
+
+        .span4
+          - if flash[:success]
+            .alert.alert-success
+              = flash[:success]
+              a.close data-dismiss='alert' x
+
+          - if flash[:info]
+            .alert.alert-info
+              = flash[:info]
+              a.close data-dismiss='alert' x
+
+          - if flash[:error]
+            .alert.alert-error
+              = flash[:error]
+              a.close data-dismiss='alert' x
+
+          - if flash[:alert]
+            .alert
+              = flash[:alert]
+              a.close data-dismiss='alert' x
+        #yield.span11
+          == yield
+      #chatbox
+      #settings
+      #home-page
+
+        /== slim :_analytics
+    == slim :'layout/templates/_forum.index'
+    /== slim :'layout/templates/_messages'

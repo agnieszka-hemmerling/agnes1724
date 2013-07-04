@@ -1,0 +1,5 @@
+#input-text
+  %form(action='/#chat')
+    %input#user(type='text')
+    %textarea#body(name='text')
+    %input(type='submit')

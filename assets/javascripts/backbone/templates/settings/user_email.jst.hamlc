@@ -1,0 +1,6 @@
+%form.form-vertical(action='/#settings/email')
+  %label New email address
+  %br
+  %input#email(type='text' value=@current_user.email)
+  %br
+  %input.btn.btn-primary(type='submit' value='Change email')

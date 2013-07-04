@@ -1,0 +1,11 @@
+%a.user-gallery(data-filename="#{@photo.filename}" href="#home/#{@photo.filename}")
+  %img(src="#{@photo.thumb_url}")
+
+.zdiecia(data-filename="#{@photo.filename}")
+  %a.prev-button
+    %img(src="/images/rnd_br_prev.png")
+  .center-photo
+    %img.galeria-photo(src="#{@photo.url}")
+  %a.next-button
+    %img(src="/images/rnd_br_next.png")
+

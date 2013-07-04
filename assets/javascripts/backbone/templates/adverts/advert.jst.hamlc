@@ -1,0 +1,11 @@
+%p
+  Animal:
+  = @advert.animal_type
+
+%p
+  City:
+  = @advert.city
+
+%p
+  = @advert.body
+

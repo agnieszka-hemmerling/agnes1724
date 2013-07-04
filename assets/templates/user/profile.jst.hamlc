@@ -1,0 +1,7 @@
+%label City:
+%input(type='text' name='city' value=@pet.city) 
+%br
+%label Write about yourself 
+%textarea.input-xlarge(rows="3" name='pet_information')
+  = @pet.information
+%br

@@ -1,0 +1,3 @@
+= @message.to_user
+= @message.body
+%br
